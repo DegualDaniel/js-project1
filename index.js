@@ -200,192 +200,286 @@ const drugs = [
   },
 ];
 
-//SOLUTION
 
-// 1. Get all drugs that are antibiotics.
 
-const drugName = drugs
-  .filter((list) => {
-    return list.category.toLowerCase() === "antibiotic";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(drugName);
 
-//2. Return an array of drug names in lowercase.
 
-const names_list = drugs.map((name) => {
-  return name.name.toLowerCase();
-});
-console.log(names_list);
 
-// 3. Write a function that accepts a category and returns all drugs under that category.
 
-const newCategory = drugs
-  .filter((cat) => {
-    return cat.category.toLowerCase() === "analgesic";
-  })
-  .map((cat) => {
-    return cat.name;
-  });
-console.log(newCategory);
+// DOM ASSIGNMENT 
+const display = document.querySelector('section')
 
-// 4. Log each drug’s name and its manufacturer.
-const inventory = drugs.forEach((list) => {
-  // console.log(`${list.name}, ${list.manufacturer}`)
-  console.log({
-    name: list.name,
-    manufacturer: list.manufacturer,
-  });
-});
+const cardDisplay = drugs.forEach((item) =>{
+  display.innerHTML += `
 
-// 5. Return all drugs that require a prescription.
+           <div class="cont">
+            <h2> Name:${item.name}</h2>
+            <h2> Id:${item.id}</h2>
+            <h2> Category:${item.category}</h2>
+            <h2> DosageMg:${item.dosageMg}</h2>
+            <h2> Manufacturer:${item.manufacturer}</h2>
+            <h2> Stock:${item.stock}</h2> 
+            <h2> IsPrescriptionOnly:${item.isPrescriptionOnly}</h2>
+            <button class="btn">Purchase</button>
+        </div>
 
-const prescriptions = drugs
-  .filter((list) => {
-    return list.isPrescriptionOnly == true;
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(prescriptions);
+  `
+})  
 
-//6. Return a new array, each item should follow the format:
-// "Drug: [name] - [dosageMg]mg".
 
-const pharm1 = drugs.forEach((list) => {
-  console.log([`Drug: ${list.name} - ${list.dosageMg}mg`]);
-});
 
-//7. Write a function that returns all drugs with a stock less than 50.
-const pharm2 = drugs
-  .filter((list) => {
-    return list.stock <= 50;
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharm2);
 
-//8. Return all drugs that are not prescription-only.
 
-const noPrescriptions = drugs
-  .filter((list) => {
-    return list.isPrescriptionOnly == false;
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(noPrescriptions);
 
-//9. Write a function that takes a manufacturer name and returns how many drugs are from that company.
-// Pfizer Company
-const pharmOwner = drugs
-  .filter((list) => {
-    return list.manufacturer == "Pfizer";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner.length);
 
-//GSK company
-const pharmOwner2 = drugs
-  .filter((list) => {
-    return list.manufacturer == "GSK";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner2.length);
 
-//Bayer company
-const pharmOwner3 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Bayer";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner3.length);
 
-//Sanofi company
-const pharmOwner4 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Sanofi";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner4.length);
 
-//Novartis company
-const pharmOwner5 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Novartis";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner5.length);
 
-//Teva company
-const pharmOwner6 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Teva";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner6.length);
 
-//Roche company
-const pharmOwner7 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Roche";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner7.length);
 
-//AstraZeneca company
-const pharmOwner8 = drugs
-  .filter((list) => {
-    return list.manufacturer == "AstraZeneca";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner8.length);
 
-//Novo Nordiskcompany
-const pharmOwner9 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Novo Nordisk";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner9.length);
 
-//Nature’s Bounty company
-const pharmOwner10 = drugs
-  .filter((list) => {
-    return list.manufacturer == "Nature’s Bounty";
-  })
-  .map((list) => {
-    return list.name;
-  });
-console.log(pharmOwner10.length);
 
-// 10. Use forEach() to count how many drugs are Analgesics.
 
-const drugAmt = drugs
-  .filter((list) => {
-    return list.category == "Analgesic";
-  })
-  .forEach((list) => {
-    console.log(list.length);
-  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ASSIGNMENT 2 HIGH ARRAY METHODS
+// //SOLUTION
+
+// // 1. Get all drugs that are antibiotics.
+
+// const drugName = drugs
+//   .filter((list) => {
+//     return list.category.toLowerCase() === "antibiotic";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(drugName);
+
+// //2. Return an array of drug names in lowercase.
+
+// const names_list = drugs.map((name) => {
+//   return name.name.toLowerCase();
+// });
+// console.log(names_list);
+
+// // 3. Write a function that accepts a category and returns all drugs under that category.
+
+// const newCategory = drugs
+//   .filter((cat) => {
+//     return cat.category.toLowerCase() === "analgesic";
+//   })
+//   .map((cat) => {
+//     return cat.name;
+//   });
+// console.log(newCategory);
+
+// // 4. Log each drug’s name and its manufacturer.
+// const inventory = drugs.forEach((list) => {
+//   // console.log(`${list.name}, ${list.manufacturer}`)
+//   console.log({
+//     name: list.name,
+//     manufacturer: list.manufacturer,
+//   });
+// });
+
+// // 5. Return all drugs that require a prescription.
+
+// const prescriptions = drugs
+//   .filter((list) => {
+//     return list.isPrescriptionOnly == true;
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(prescriptions);
+
+// //6. Return a new array, each item should follow the format:
+// // "Drug: [name] - [dosageMg]mg".
+
+// const pharm1 = drugs.forEach((list) => {
+//   console.log([`Drug: ${list.name} - ${list.dosageMg}mg`]);
+// });
+
+// //7. Write a function that returns all drugs with a stock less than 50.
+// const pharm2 = drugs
+//   .filter((list) => {
+//     return list.stock <= 50;
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharm2);
+
+// //8. Return all drugs that are not prescription-only.
+
+// const noPrescriptions = drugs
+//   .filter((list) => {
+//     return list.isPrescriptionOnly == false;
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(noPrescriptions);
+
+// //9. Write a function that takes a manufacturer name and returns how many drugs are from that company.
+// // Pfizer Company
+// const pharmOwner = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Pfizer";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner.length);
+
+// //GSK company
+// const pharmOwner2 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "GSK";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner2.length);
+
+// //Bayer company
+// const pharmOwner3 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Bayer";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner3.length);
+
+// //Sanofi company
+// const pharmOwner4 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Sanofi";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner4.length);
+
+// //Novartis company
+// const pharmOwner5 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Novartis";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner5.length);
+
+// //Teva company
+// const pharmOwner6 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Teva";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner6.length);
+
+// //Roche company
+// const pharmOwner7 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Roche";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner7.length);
+
+// //AstraZeneca company
+// const pharmOwner8 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "AstraZeneca";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner8.length);
+
+// //Novo Nordiskcompany
+// const pharmOwner9 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Novo Nordisk";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner9.length);
+
+// //Nature’s Bounty company
+// const pharmOwner10 = drugs
+//   .filter((list) => {
+//     return list.manufacturer == "Nature’s Bounty";
+//   })
+//   .map((list) => {
+//     return list.name;
+//   });
+// console.log(pharmOwner10.length);
+
+// // 10. Use forEach() to count how many drugs are Analgesics.
+
+// const drugAmt = drugs
+//   .filter((list) => {
+//     return list.category == "Analgesic";
+//   })
+//   .forEach((list) => {
+//     console.log(list.length);
+//   });

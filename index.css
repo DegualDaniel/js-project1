@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: monospace;
+    background-color: whitesmoke;
+}
+section{
+    padding: 20px;
+    /* background-color: rebeccapurple; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-columns: 4fr 1fr; */
+    /* grid-template-rows: 4fr 2fr; */
+.cont{
+    margin: 10px;
+    /* background-color: yellow; */
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+}
+.cont h2{
+
+    font-size: 20px;
+    padding: 5px;
+
+}
+.btn{
+    background-color: black;
+    padding: 10px 30px;
+    color: white;
+    font-weight: bold; 
+    border-radius: 20px;
+    margin: 10px 0;
+}
